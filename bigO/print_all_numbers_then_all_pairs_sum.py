@@ -9,7 +9,7 @@ def print_all_numbers_then_all_pair_sums(numbers):
     for n1 in numbers: # O(n)
         for n2 in numbers: # O(n)
             print(n1+n2)
-        #O(n*n) = On^2
+        #O(n*n) = O(n^2)
 
 
 print_all_numbers_then_all_pair_sums([1,2,3,4,5,6]) # O(n + n^2) = O(n^2)
