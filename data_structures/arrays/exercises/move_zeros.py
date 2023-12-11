@@ -10,4 +10,15 @@ def move_zeros(nums):
         loop_index += 1
     return nums
 
-move_zeros([0,1,0,3,12])
+def move_zeros_2(nums: list):
+    slow = 0
+    for fast in range(len(nums)):
+        if nums[fast] != 0 and nums[slow] == 0:
+            nums[slow], nums[fast] = nums[fast], nums[slow]
+
+        # wait while we find a non-zero element to
+        # swap with you
+        if nums[slow] != 0:
+            slow += 1
+
+move_zeros_2([0,1,0,3,12])
