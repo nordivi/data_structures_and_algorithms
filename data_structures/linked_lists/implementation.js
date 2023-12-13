@@ -58,20 +58,25 @@ class LinkedList{
         return this
     }
 
-    reverse(){
-        let tail = this.tail
-        let head = this.head
-        currNode = this.head
-        nextNode = this.head.next
-        for (let i = 0; i < this.length-1; i--){
-            nextNode.next = CurrNode
-            currNode = currNode.next
-            nextNode = currNode.next
+    reverse() {
+        if (!this.head.next) {
+          return this.head;
         }
-        this.tail = head
-        this.head = tail
+        let first = this.head;
+        this.tail = this.head;
+        let second = first.next;
+    
+        while(second) {
+          const temp = second.next;
+          second.next = first;
+          first = second;
+          second = temp;
+        }
+    
+        this.head.next = null;
+        this.head = first;
         return this
-    }
+      }
 
 }
 
