@@ -27,6 +27,10 @@ class Stack():
         self.length+=1
         return self
     def pop(self):
+        if not self.top:
+            return None
+        if self.top == self.bottom:
+            self.bottom = None
         poped_item = self.top
         self.top = self.top.next
         self.length-=1
