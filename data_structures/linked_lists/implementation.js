@@ -58,6 +58,21 @@ class LinkedList{
         return this
     }
 
+    reverse(){
+        let tail = this.tail
+        let head = this.head
+        currNode = this.head
+        nextNode = this.head.next
+        for (let i = 0; i < this.length-1; i--){
+            nextNode.next = CurrNode
+            currNode = currNode.next
+            nextNode = currNode.next
+        }
+        this.tail = head
+        this.head = tail
+        return this
+    }
+
 }
 
 const myLinkedList = new LinkedList(20)
