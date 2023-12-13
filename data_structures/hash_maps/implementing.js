@@ -40,8 +40,17 @@ class HashTable {
             }
 
         }
-        
+    }
 
+    keys(){
+        const keyArray = []
+        for (let i = 0; i < currBucket.length; i++ ) {
+            if (this.data[i]){
+                keyArray.push(data[i][0][0])
+            }
+
+        }
+        return keyArray
     }
 
 
