@@ -2,16 +2,14 @@
 
 
 def buy_and_sell(prices):
-    l, r = 0, 1
-    maxP = 0
+    n = len(prices)
+    m1 = prices[0]
+    m2 = 0
+    for i in range(1, n):
+        if m1 > prices[i]:
+            m1 = prices[i]
+        if m2 < (prices[i] - m1):
+            m2 = prices[i] - m1
+    return m2
 
-    while r < len(prices):
-        if prices[l] < prices[r]:
-            profit = prices[r] - prices[l]
-            maxP = max(maxP, profit)
-        else:
-            l = r
-        r += 1
-    return maxP
-
-buy_and_sell([3,11,1,5,3,6,4])
+buy_and_sell([7,1,5,3,6,4])
